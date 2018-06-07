@@ -86,3 +86,52 @@ case name
     end
 ```
 
+
+
+### 7. method
+
+- 대부분의 언어
+  - 클래스 밖 : function
+  - 클래스 안 : method
+- 루비에서는 모든 function은 method
+
+```ruby
+# 루비에서의 method 선언
+def simple
+ 	puts"simple!!"
+end  
+
+#루비에서의 method는 괄호를 명시적으로 적어 줄 수도 있습니다.
+def simple()
+ 	puts"simple!!"
+end 
+```
+
+- return 키워드는 선택적으로 사용
+
+  ```ruby
+  def add (a, b)
+     return a + b
+  end  
+  
+  add 1,2 # => 3
+  
+  # return이 없을 때 마지막 연산 값을 return
+  def add2(a,b)
+     a+b
+  end  
+  add2(1,2) #=> 3
+  
+  #return을 선택적으로 사용할 수 있습니다.
+  def divide(a,b)
+  return "I don't think so" if b == 0
+  a / b
+  end  
+  
+  divide(4, 0)
+  # => "I don't think so"
+  divide(4, 1)
+  # => 4
+  ```
+
+  
