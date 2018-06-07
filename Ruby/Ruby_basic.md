@@ -239,7 +239,7 @@ my_name # "SON SEONG EUN"
   - {key1:val1, ..}
 
 ```ruby
-hash1 = {:key => value}
+hash1 = {:key => value, key: value}
 hash2 = {key: value}
 hash3 = {"key" => value}
 ```
