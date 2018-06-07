@@ -109,29 +109,106 @@ end
 
 - return 키워드는 선택적으로 사용
 
+```ruby
+def add (a, b)
+   return a + b
+end  
+
+add 1,2 #  3
+
+# return이 없을 때 마지막 연산 값을 return
+def add2(a,b)
+   a+b
+end  
+add2(1,2) # 3
+
+#return을 선택적으로 사용할 수 있습니다.
+def divide(a,b)
+return "I don't think so" if b == 0
+a / b
+end  
+
+divide(4, 0)
+#  "I don't think so"
+divide(4, 1)
+#  4
+```
+
+- 기본 매개 변수
+
+```ruby
+# true일때 : false일때
+def factorial4(n)
+  n == 0 ? 1 : n*factorial4(n-1)
+end  
+
+factorial4(5) # 120
+factorail4 # => ArgumentError: wrong number of arguments (given 0, expected 1) from (pry):1:in `factorial4'
+
+# default 값을 정해주면 매개변수 없이 호출가능
+def factorial_default(n=10)
+ n == 0 ? 1 : n*factorial_default(n-1)  
+end  
+
+factorial_default # 3628800
+```
+
+
+
+### 9. block
+
+```ruby
+3.times {puts "hello"}
+
+3.times do |asdf|
+	puts asdf # 이 부분이 block
+end  
+
+# 0
+# 1
+# 2
+# => 3
+```
+
+```ruby
+def hihi
+	return "No block" unless block_given?
+	yield
+end  
+
+hihi # "No block"
+
+hihi {puts "hihi"} # hihi
+```
+
+
+
+###  10. String
+
+- 'single quote' : 있는 그대로 저장
+
+- "double quote"
+
   ```ruby
-  def add (a, b)
-     return a + b
-  end  
+  a = "안녕하세요. \n 반가워용" 
+  # => "안녕하세요. \n 반가워용"
+   b = '안녕하세용 \n 반가워용'
+  #=> "안녕하세용 \\n 반가워용"
   
-  add 1,2 # => 3
+  puts a
+  #안녕하세요. 
+  # 반가워용
   
-  # return이 없을 때 마지막 연산 값을 return
-  def add2(a,b)
-     a+b
-  end  
-  add2(1,2) #=> 3
+  puts b
+  #안녕하세용 \n 반가워용
   
-  #return을 선택적으로 사용할 수 있습니다.
-  def divide(a,b)
-  return "I don't think so" if b == 0
-  a / b
-  end  
+  name = "allmine123"
   
-  divide(4, 0)
-  # => "I don't think so"
-  divide(4, 1)
-  # => 4
+  a = "#{name}님 안녕하세요"                      
+  # => "allmine123님 안녕하세요"
+  
+  b = '#{name}님 안녕하세요'
+  # => "\#{name}님 안녕하세요\"\nb = "
   ```
 
   
