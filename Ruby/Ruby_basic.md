@@ -185,9 +185,9 @@ hihi {puts "hihi"} # hihi
 
 ###  10. String
 
-- 'single quote' : 있는 그대로 저장
+- 'single quote' : 거의 있는 그대로 저장
 
-- "double quote"
+- "double quote" : 개행문자 사용가능
 
   ```ruby
   a = "안녕하세요. \n 반가워용" 
@@ -212,3 +212,50 @@ hihi {puts "hihi"} # hihi
   ```
 
   
+
+```ruby
+my_name = "son seong eun"
+my_name.upcase #"SON SEONG EUN"
+my_name #"son seong eun"
+my_name.upcase!
+my_name # "SON SEONG EUN"
+```
+
+
+
+### 11. array
+
+- 이질배열 생성 가능
+
+  `["string", :s, true, 123]`
+
+
+
+### 12. Hash
+
+- key, value로 이루어져 있다!!! *** 매우 중요 ***
+- 생성
+  - Hash.new(0)
+  - {key1:val1, ..}
+
+```ruby
+hash1 = {:key => value}
+hash2 = {key: value}
+hash3 = {"key" => value}
+```
+
+- each 반복하기
+
+  ```ruby
+  hash1.each do |k,v| # k, v 변수명 상관없음. 
+      puts "#{k} : #{v}"
+  end 
+  ```
+
+  >  |key, value| 순서
+
+
+
+### 13. 추가정보 
+
+- <https://gist.github.com/nacyot/7624036>
